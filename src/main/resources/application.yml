@@ -1,6 +1,7 @@
 spring:
   liquibase:
-    change-log: db/changelog/db.changelog-master.yaml
+#    change-log: db/changelog/db.changelog-master.yaml
+    enabled: true
   jpa:
     show-sql: true
     open-in-view: false

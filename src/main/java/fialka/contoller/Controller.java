@@ -1,5 +1,6 @@
 package fialka.contoller;
 
+import fialka.entity.Person;
 import fialka.repository.DBRepository;
 import fialka.utils.Gender;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class Controller {
 
     @PostMapping("/insertToDb")
     public ResponseEntity insertToDb() {
-        dbRepository.insertToDB("Gurbanguly", 18, Gender.Male);
+        dbRepository.insertToDB(new Person("Gurbanguly", "Berdymukhamedov", Gender.Male));
         return okResponse;
     }
 

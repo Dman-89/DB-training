@@ -16,6 +16,7 @@ public class HibernateUtil {
 //                        .configure("hibernate.cfg.xml").build();
                         .applySetting("hibernate.connection.url",
                                 "jdbc:postgresql://host:5432/database?user=postgres&password=postgres")
+                        .build();
 
 
                 Metadata metaData = new MetadataSources(standardRegistry)

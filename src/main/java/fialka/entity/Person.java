@@ -1,10 +1,19 @@
 package fialka.entity;
 
+import fialka.utils.Gender;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Person")
 public class Person {
+
+    public Person() {}
+
+    public Person(String firstName, String lastName, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +24,9 @@ public class Person {
 
     @Column(name = "LAST_NAME")
     String lastName;
+
+    @Column
+    Gender gender;
 
     public long getId() {
         return id;
@@ -34,5 +46,13 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

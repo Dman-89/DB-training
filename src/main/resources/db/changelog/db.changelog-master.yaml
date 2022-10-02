@@ -1,3 +1,5 @@
 databaseChangeLog:
-  - include:
-      file: db.changlog/changeset1.sql
+- include:
+    file: db/changelog/changeset1.sql
+- include:
+    file: db/changelog/changeset2.sql

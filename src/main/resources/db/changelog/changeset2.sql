@@ -1,7 +1,3 @@
--- --changeset fialka:1
--- create table Person
--- (
---     PersonID  serial,
---     LastName  varchar(255),
---     FirstName varchar(255)
--- );
+--changeset fialka:2
+CREATE TYPE gender AS ENUM ('male', 'female');
+alter table Person add column gender gender
