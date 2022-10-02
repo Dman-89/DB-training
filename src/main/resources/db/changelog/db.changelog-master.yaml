@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db.changlog/changeset1.sql
