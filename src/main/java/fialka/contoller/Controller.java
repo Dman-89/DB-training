@@ -33,6 +33,7 @@ public class Controller {
     @PostMapping("/insertToDb")
     public ResponseEntity insertToDb() {
         dbRepository.insertToDB(new Person("Gurbanguly", "Berdymukhamedov", Gender.Male));
+//        dbRepository.save(new Person("Gurbanguly", "Berdymukhamedov", Gender.Male));
         return okResponse;
     }
 

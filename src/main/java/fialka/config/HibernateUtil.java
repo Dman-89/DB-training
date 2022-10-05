@@ -5,7 +5,9 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.springframework.context.annotation.Configuration;
 
+//@Configuration
 public class HibernateUtil {
     private static SessionFactory sessionFactory = buildSessionFactory();
 
@@ -15,7 +17,9 @@ public class HibernateUtil {
                 StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
 //                        .configure("hibernate.cfg.xml").build();
                         .applySetting("hibernate.connection.url",
-                                "jdbc:postgresql://host:5432/database?user=postgres&password=postgres")
+                                "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres")
+                        .applySetting("hibernate.dialect",
+                                "org.hibernate.dialect.PostgreSQLDialect")
                         .build();
 
 

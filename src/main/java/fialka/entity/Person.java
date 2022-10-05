@@ -2,6 +2,7 @@ package fialka.entity;
 
 import fialka.utils.Gender;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "Person")
@@ -19,13 +20,14 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @Column(name = "FIRST_NAME")
+    @Column(name = "firstname")
     String firstName;
 
-    @Column(name = "LAST_NAME")
+    @Column(name = "lastname")
     String lastName;
 
-    @Column
+    @Type(type = "gender")
+    @Column(name = "gender")
     Gender gender;
 
     public long getId() {

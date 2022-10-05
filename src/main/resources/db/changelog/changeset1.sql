@@ -1,7 +1,7 @@
 --changeset fialka:1
 create table Person
 (
-    PersonID  serial,
-    LastName  varchar(255),
-    FirstName varchar(255)
+    personid  serial,
+    lastname  varchar(255),
+    firstname varchar(255)
 );

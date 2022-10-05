@@ -12,10 +12,10 @@ repositories {
 dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.0'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
-    implementation group: 'org.hibernate', name: 'hibernate-core', version: '6.0.2.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.9.Final'
     implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
-//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.7.0'
-//    implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.7.0'
+    implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
     implementation 'org.liquibase:liquibase-core:4.2.2'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.7.4'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
