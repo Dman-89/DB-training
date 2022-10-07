@@ -16,10 +16,9 @@ public class HibernateUtil {
             if (sessionFactory == null) {
                 StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
 //                        .configure("hibernate.cfg.xml").build();
-                        .applySetting("hibernate.connection.url",
-                                "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres")
-                        .applySetting("hibernate.dialect",
-                                "org.hibernate.dialect.PostgreSQLDialect")
+                        .applySetting("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=postgres")
+                        .applySetting("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
+                        .applySetting("hibernate.current_session_context_class", "thread") //org.hibernate.context.ThreadLocalSessionContext // causes ClassNotFoundException: Could not load requested class : org.hibernate.context.ThreadLocalSessionContext
                         .build();
 
 
