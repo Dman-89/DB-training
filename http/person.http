@@ -1,0 +1,12 @@
+GET http://localhost:8081/person/-1
+#not found 404
+
+###
+GET http://localhost:8081/person/1
+###
+POST http://localhost:8081/person
+content-type:application/json
+
+{
+"firstName":"Dimon","lastName":"fialka","gender":"MALE"
+}
