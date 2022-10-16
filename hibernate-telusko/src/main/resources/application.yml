@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  # needed for liquibase also
+  datasource:
+    url: jdbc:postgresql://localhost:5432/neon
+    username: postgres
+    password: postgres
+
+  liquibase:
+    # it's a default changelog master, that's why commented out
+    change-log: db/changelog/db.changelog-master.yaml
+    enabled: false
+    # to save liquibase control tables in same schema
+    default-schema: fialka
+
+#  jpa:
+##    show-sql: true
+##    open-in-view: false
+##    generate-ddl: false
+#    properties:
+#      hibernate:
+#        default_schema:
+#        show_sql: true
+#        use_sql_comments: true
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        url: jdbc:postgresql://localhost:5432/postgres
+#        username: postgres
+#        password: postgres
+

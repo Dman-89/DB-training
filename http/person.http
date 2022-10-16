@@ -5,6 +5,8 @@ GET http://localhost:8081/person/-1
 GET http://localhost:8081/person/1
 ###
 POST http://localhost:8081/person
+###
+POST http://localhost:8081/test/ping2
 content-type:application/json
 
 {
