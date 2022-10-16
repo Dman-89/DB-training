@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service
 @Service
 class Service {
 
-    @Autowired
-    lateinit var sessionFactory: SessionFactory
+//    @Autowired
+//    lateinit var sessionFactory: SessionFactory
+
+    val sessionFactory: SessionFactory = HibernateUtil.sessionFactory
 
     fun save() {
         val session = sessionFactory.openSession()
