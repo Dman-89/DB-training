@@ -1,16 +1,25 @@
 package fialka.entity;
 
 import fialka.utils.Gender;
-import jakarta.persistence.*;
 import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Person")
-public class Person {
+public class PersonEntity {
 
-    public Person() {}
+    public PersonEntity() {
+    }
 
-    public Person(String firstName, String lastName, Gender gender) {
+    public PersonEntity(String firstName, String lastName, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
+
+    public PersonEntity(Long id, String firstName, String lastName, Gender gender) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -18,19 +27,16 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private Long id;
+    @Column
+    private String firstName;
+    @Column
+    private String lastName;
+    @Enumerated(EnumType.STRING)
+    @Column
+    private Gender gender;
 
-    @Column(name = "firstname")
-    String firstName;
-
-    @Column(name = "lastname")
-    String lastName;
-
-    @Type(type = "gender")
-    @Column(name = "gender")
-    Gender gender;
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
